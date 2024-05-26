@@ -1,0 +1,24 @@
+
+
+Devops
+    - Setup Github
+    - Setup Github actions
+    - Merges to master branch should trigger deployment to rasberri pi
+    - Tests should be run on deployment
+
+
+Business logic
+    - Account creation
+    - Post creation
+    - Friend requests
+    - Feed generator (get most relevant info)
+    - Storing images
+        - S3
+
+
+
+
+
+
+- Check if we can get AWS S3, MySQL
+- Make command which will delete all existing containers/images and create new ones
