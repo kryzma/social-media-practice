@@ -24,7 +24,7 @@ def init_db():
 
 @app.route('/')
 def home():
-    return "Hello, Flask!"
+    return "Hello, Flask! (I was deployed automatically with Github Actions!)"
 
 if __name__ == '__main__':
     init_db()
