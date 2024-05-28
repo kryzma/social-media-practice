@@ -9,6 +9,11 @@ services:
       - "5000:5000"
     depends_on:
       - db
+    environment:
+      POSTGRES_DB: exampledb
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      FLASK_ENV: development
   db:
     image: postgres
     environment:

@@ -26,6 +26,6 @@ jobs:
         run: |
           ssh -o StrictHostKeyChecking=no aviete@212.122.80.179 << 'EOF'
           cd /home/aviete/projects/social
-          sudo docker-compose down
+          sudo  
           sudo docker-compose up -d --build
           EOF

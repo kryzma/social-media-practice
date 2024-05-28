@@ -1,32 +1,19 @@
-from flask import Flask, send_from_directory
-import sqlite3
+# app.py
+from flask import Flask, jsonify, send_from_directory
+from db import init_db, fetch_users
 
 app = Flask(__name__)
-
-def get_db_connection():
-    conn = sqlite3.connect(':memory:')  # In-memory database
-    conn.row_factory = sqlite3.Row  # This enables name-based access to columns
-    return conn
-
-
-def init_db():
-    conn = get_db_connection()
-    conn.execute('''
-    CREATE TABLE accounts (
-        id INTEGER PRIMARY KEY,
-        username TEXT NOT NULL,
-        email TEXT NOT NULL UNIQUE
-    )
-    ''')
-    conn.commit()
-    conn.close()
-
 
 @app.route('/')
 def home():
     return send_from_directory('static', 'sus_dog.jpg')
 
+@app.route('/users')
+def users():
+    user_records = fetch_users()
+    users_list = [{'id': user[0], 'username': user[1], 'email': user[2]} for user in user_records]
+    return jsonify(users_list)
+
 if __name__ == '__main__':
     init_db()
     app.run(host='0.0.0.0')
-
