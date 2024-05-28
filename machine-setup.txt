@@ -13,6 +13,7 @@ sudo apt update
 sudo apt install docker-ce
 
 # Docker start daemon
+systemctl start docker
 
 # Docker-compose install
 

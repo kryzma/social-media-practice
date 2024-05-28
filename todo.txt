@@ -1,10 +1,10 @@
 
 
 Devops
-    - Setup Github
-    - Setup Github actions
-    - Merges to master branch should trigger deployment to rasberri pi
+    - Monitoring
+
     - Tests should be run on deployment
+    - Create stage branch
 
 
 Business logic
@@ -22,3 +22,4 @@ Business logic
 
 - Check if we can get AWS S3, MySQL
 - Make command which will delete all existing containers/images and create new ones
+
