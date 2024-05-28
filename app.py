@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, send_from_directory
 import sqlite3
 
 app = Flask(__name__)
@@ -24,7 +24,7 @@ def init_db():
 
 @app.route('/')
 def home():
-    return "Hello, Flask! (I was deployed automatically with Github Actions!)"
+    return send_from_directory('static', 'sus_dog.jpg')
 
 if __name__ == '__main__':
     init_db()
